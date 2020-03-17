@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Toys</title>
+    <!-- <documentation at http://demos.jquerymobile.com/1.4.1/ > -->
+       
+        <link rel="stylesheet" href="/public/stylesheets/themes/autobot.css" />
+        <link rel="stylesheet" href="/public/stylesheets/themes/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> 
+ 
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="/public/javascripts/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="/public/stylesheets/style.css">
+
+</head>
+
+<body>
+  
+    <!-- Start of  page -->
+    <div data-role="page"  id="home">
+        <!--   page header -->
+        <div data-role="header" data-theme='a'>
+            <!-- helpful location   -->
+            <!-- https://demos.jquerymobile.com/1.2.0/docs/toolbars/docs-navbar.html -->
+
+            <h1>My Toys</h1>
+            <div data-role="navbar" >
+                <ul>
+                    <li><a href="#home">Home Page</a></li>
+                    <li><a href="#Load">Add Toy</a></li>
+                    <li><a href="#ListAll">List Toys</a></li>
+        
+                </ul>
+                </div><!-- /navbar -->
+            
+        </div>
+        <!--   page content -->
+        <div data-role="content" data-theme='a'>
+            <h2> My Collection of Toys</h2>
+            <img src="/public/images/OIP1.jpeg" alt="Picture"width="562" height="750" >
+            <img src="/public/images/OIP2.jpeg" alt="Picture" width="540" height="700" >
+            <img src="/public/images/OIP3.jpeg" alt="Picture" width="1024" height="825" >
+        </div>
+            
+        <!--  page footer -->
+        <div data-role="footer" data-theme='a'>
+                <h1>Copyrigtht 2020 by Dylan York</h1>
+        </div>
+    </div>
+
+
+    <div data-role="page"  id="Load">
+        <!--  page header -->
+        <div data-role="header" data-theme='a'>
+            <h1>My Toys</h1>
+            <div data-role="navbar" >
+                <ul>
+                    <li><a href="#home">Home Page</a></li>
+                    <li><a href="#Load">Add Toy</a></li>
+                    <li><a href="#ListAll">List Toys</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div>
+        <!-- page content -->
+        <div data-role="content" data-theme='b'>
+            <h2>Enter a new Toy</h2>
+            Enter Toy name <br />
+            <input type="text" value="" id="title" />
+            Enter year released <br />
+            <input type="text" value="" id="year" />
+            Enter creator <br />
+            <input type="text" value="" id="creator" />
+            Enter height <br />
+            <input type="text" value="" id="height" />
+            <form>
+                <div class="ui-field-contain">
+                <label for="select-genre">Select a Genre</label>
+                <select name="select-genre" id="select-genre">
+                    <option value="Transformer">Transformer</option>
+                    <option value="Action Figure">Action Figure</option>
+                    <option value="Lego">Lego</option>
+                    <option value="Doll">Doll</option>
+                    
+                </select>
+                </div>
+            </form>
+
+            <input type="button" value="Click To Add Toy" id="buttonAdd"  data-inline="true" />
+                <input type="button" value="Clear Data" id="buttonClear"  data-inline="true" />
+        </div>
+            
+        <!--   page footer -->
+        <div data-role="footer" data-theme='a'>
+            <h1>Copyrigtht 2020 by Dylan York</h1>
+        </div>
+    </div>
+
+
+
+
+    <div data-role="page"  id="ListAll">
+            <!--   page header -->
+        <div data-role="header" data-theme='a'>
+            <h1>My Toys</h1>
+            <div data-role="navbar" >
+                <ul>
+                    <li><a href="#home">Home Page</a></li>
+                    <li><a href="#Load">Add Toy</a></li>
+                    <li><a href="#ListAll">List Toys</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div>
+
+            <!-- LisAll   page content -->
+        <div data-role="content" data-theme='a'>
+            <p> Here are my Toys</p>
+            <div id="divToyList"></div>
+            <input type="button" value="Sort By Genre" id="buttonSortGenre" data-inline="true"  />
+            <input type="button" value="Sort By Title" id="buttonSortTitle" data-inline="true"   />
+            <br />
+            <br />
+            Enter toy Title to Delete <br />
+            <input type="text" value="" id="deleteTitle" data-inline="true" />
+            <input type="button" value="Delete toy by Title from Title box" id="buttonDelete" data-inline="true"   />
+        </div>
+              
+            <!--   page footer -->
+            <div data-role="footer" data-theme='a'>
+              <h1>Copyrigtht 2020 by Dylan York</h1>
+            </div>
+        </div>
+    </div>      
+    
+    <!-- Start of  page -->
+    <div data-role="page"  id="detailPage">
+        <!--   page header -->
+        <div data-role="header" data-theme='a'> 
+            <h1>My Toys</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#home">Home Page</a></li>
+                    <li><a href="#Load">Add Toy</a></li>
+                    <li><a href="#ListAll">List Toys</a></li>
+
+                </ul>
+            </div><!-- /navbar -->
+        </div>
+        <!--  content -->
+        <div data-role="content" data-theme='d'>
+            <div>
+                <p id="IDparmHere" hidden>change1</p>  <!-- hidden    a place to stash the toy title -->
+                <p> <span class="bold">Here are the details</span></p>
+                <p> <span class="bold"> Title: </span> <span id="oneTitle" </span>  </p>
+                    <p><span class="bold"> Year: </span> <span id="oneYear" </span>  </p>
+                    <p><span class="bold"> Genre: </span> <span id="oneGenre" </span>  </p>
+                    <p><span class="bold"> Height: </span> <span id="oneHeight" </span>  </p>
+                    <p><span class="bold"> Creator: </span> <span id="oneCreator" </span>  </p>
+            </div>
+        </div>
+            
+        <!--    footer -->
+        <div data-role="footer" data-theme='a'>
+            <h1>Copyrigtht 2020 by Dylan York</h1>
+        </div>
+   
+    </div>  
+
+    <!-- Start of  page -->
+    <div data-role="page"  id="refreshPage">
+       <!--  content -->
+        <div data-role="content" >
+              <!--  this page is used to to jump to and then back to a page to force a pagebeforeload event -->
+        </div>
+    </div>  
+
+</body>
